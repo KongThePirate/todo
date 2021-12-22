@@ -6,7 +6,10 @@ Simple command line todo for Linux (just like the other 3000 of these)
 
 # setup
 I made a `setup.sh` file that compiles the file for you, makes some folders for data and moves the file to /usr/bin.
+
 To run it:
+
 `chmod +x setup.sh`
+
 `./setup.sh`
 
