@@ -13,3 +13,9 @@ To run it:
 
 `./setup.sh`
 
+# commands
+Current commands:
+- `add`    - Adds a task item to the list. Example: `todo add "Buy groceries"`
+- `list`   - Displays all tasks
+- `remove` - Removes a given task. Example: `todo remove 1`
+- `clear`  - Clears the list of tasks
