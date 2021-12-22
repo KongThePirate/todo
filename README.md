@@ -19,3 +19,4 @@ Current commands:
 - `list`   - Displays all tasks
 - `remove` - Removes a given task. Example: `todo remove 1`
 - `clear`  - Clears the list of tasks
+- `help`   - **Currently not available**
