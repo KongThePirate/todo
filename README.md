@@ -5,13 +5,15 @@ Simple command line todo for Linux (just like the other 3000 of these)
 - g++ or any other c++ compiler
 
 # setup
-I made a `setup.sh` file that compiles the file for you, makes some folders for data and moves the file to /usr/bin.
+Standard makefile procedure
 
-To run it:
+`make` to compile it
 
-`chmod +x setup.sh`
+`make install` to install the file to /usr/bin (you'll need root privileges to run with sudo/doas)
 
-`./setup.sh`
+`make clean` to remove any binaries in the source folder and residual data (this will clear all your todo lists)
+
+`make uninstall` to uninstall from /usr/bin (you'll need root privileges again)
 
 # commands
 Current commands:
