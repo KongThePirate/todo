@@ -9,7 +9,7 @@ Standard makefile procedure
 
 `make` to compile it
 
-`make install` to install the file to /usr/bin (you'll need root privileges to run with sudo/doas)
+`make install` to install the file to /usr/bin (you'll need root privileges so it run with sudo/doas)
 
 `make clean` to remove any binaries in the source folder and residual data (this will clear all your todo lists)
 
