@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
+#include <filesystem>
 
 using namespace std;
 
@@ -21,6 +22,11 @@ void list()
 
 int main(int argc, char* argv[]){
   string user = getenv("USER");
+  if (! filesystem::is_directory("/home/" + user + "/.config/todo")){
+    filesystem::create_directory("/home/" + user + "/.config/todo");
+  }
+
+  // some variables
   char add1[ ] = "add";
   char remove1[ ] = "remove";
   char clear1[ ] = "clear";
