@@ -47,7 +47,7 @@ void remove(int argc, char* input)
   {
     if (currentline != linetoremove)
     {
-    contents += line;
+    contents += line + "\n";
     }
   }
   auto outfile = ofstream("/home/" + user + "/.config/todo/list.txt");
@@ -67,12 +67,12 @@ int main(int argc, char* argv[])
     filesystem::create_directory("/home/" + user + "/.config/todo");
   }
 
-  string input(argv[1]);
+  string func(argv[1]);
 
-  if (input == "add" && argc >= 3) add(argc, argv[2]);
-  else if (input == "clear") clear();
-  else if (input == "list") list();
-  else if (input == "remove" && argc >= 3) remove(argc, argv[2]);
+  if (func == "add" && argc >= 3) add(argc, argv[2]);
+  else if (func == "clear") clear();
+  else if (func == "list") list();
+  else if (func == "remove" && argc >= 3) remove(argc, argv[2]);
   
   return 0;
 }
