@@ -56,6 +56,11 @@ void remove(int argc, char* input)
 
 int main(int argc, char* argv[])
 {
+  //check if there are enough arguments
+  if (argc == 1){
+    cout << "todo: not enough parameters" << endl;
+    return 0;
+  }
   // check if ~/.config/todo/ exists, and if not, create it
   if (! filesystem::is_directory("/home/" + user + "/.config/todo"))
   {
