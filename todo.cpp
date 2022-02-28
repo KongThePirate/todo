@@ -6,12 +6,12 @@
 
 using namespace std;
 
-const string user = getenv("USER");
+const string home = getenv("HOME");
 
 
 void list()
 {
-  ifstream file("/home/" + user + "/.config/todo/list.txt");
+  ifstream file(home + "/.config/todo/list.txt");
       
   string line;
   int number = 1;
@@ -25,14 +25,15 @@ void list()
 void add(int argc, char* input)
 {
   ofstream list;
-  list.open ("/home/" + user + "/.config/todo/list.txt", ios_base::app);
+  list.open (home + "/.config/todo/list.txt", ios_base::app);
   list << input << endl;
   list.close();
+  
 }
 
 void clear()
 {
-  string newstr = "/home/" + user + "/.config/todo/list.txt";
+  string newstr = home + "/.config/todo/list.txt";
   const char *c = newstr.c_str();
   remove(c);
 }
@@ -41,7 +42,7 @@ void remove(int argc, char* input)
 {
   int linetoremove = atoi(input);
   string contents, line;
-  auto infile = ifstream("/home/" + user + "/.config/todo/list.txt");
+  auto infile = ifstream(home + "/.config/todo/list.txt");
   short currentline = 1;
   for (; getline(infile, line); ++currentline)
   {
@@ -50,7 +51,7 @@ void remove(int argc, char* input)
     contents += line + "\n";
     }
   }
-  auto outfile = ofstream("/home/" + user + "/.config/todo/list.txt");
+  auto outfile = ofstream(home + "/.config/todo/list.txt");
   outfile << contents;
 }
 
@@ -62,9 +63,9 @@ int main(int argc, char* argv[])
     return 0;
   }
   // check if ~/.config/todo/ exists, and if not, create it
-  if (! filesystem::is_directory("/home/" + user + "/.config/todo"))
+  if (! filesystem::is_directory(home + "/.config/todo"))
   {
-    filesystem::create_directory("/home/" + user + "/.config/todo");
+    filesystem::create_directory(home + "/.config/todo");
   }
 
   string func(argv[1]);
